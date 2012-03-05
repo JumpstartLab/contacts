@@ -1,0 +1,25 @@
+<%= form_for(@contact_connection) do |f| %>
+  <% if @contact_connection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact_connection.errors.count, "error") %> prohibited this contact_connection from being saved:</h2>
+
+      <ul>
+      <% @contact_connection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_id %><br />
+    <%= f.number_field :contact_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

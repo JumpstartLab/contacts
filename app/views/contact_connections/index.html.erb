@@ -1,0 +1,25 @@
+<h1>Listing contact_connections</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Contact</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contact_connections.each do |contact_connection| %>
+  <tr>
+    <td><%= contact_connection.user_id %></td>
+    <td><%= contact_connection.contact_id %></td>
+    <td><%= link_to 'Show', contact_connection %></td>
+    <td><%= link_to 'Edit', edit_contact_connection_path(contact_connection) %></td>
+    <td><%= link_to 'Destroy', contact_connection, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact connection', new_contact_connection_path %>
